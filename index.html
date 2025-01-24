@@ -4,42 +4,65 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="style.css">
     <title>Document</title>
 </head>
 <body>
-<h1>Currency Conveter</h1>
 
-<form action="">
-<div class="amount">
-    <p>Amount</p>
-    <input value="" type="text" name="" id="">
-</div>
-<div class="dropdawn">
-    <div class="from">
-        <p>From</p>
-        <img src="https://flagsapi.com/BE/flat/64.png" alt="">
-        <select name="from" id="">
-            <option value="USD">USD</option>
-            <option value="INR">INR</option>
-            <option value="EURO">EURO</option>
-            <option value="AUD">AUD</option>
-        </select>
-    </div>
-    <i class="fa-solid fa-arrow-right-arrow-left"></i>
-    <div class="to">
-        <p>To</p>
-        <img src="https://flagsapi.com/IN/flat/64.png" alt="">
+
+<div class="contaner">
+    <h1>Currency-Conveter</h1>
+    <form action="">
+        <div class="amount">
+           
+            <p> Enter Amount</p>
+            <input value="100" type="text" name="" id="">
+        </div>
+        <div class="dropdawn">
+            
+            <div class="from">
+                <p>From</p>
+                <div class="s1">
+                    <div class="slect">
+                  
+                         <img src="https://flagsapi.com/BE/flat/64.png" alt="">
+                  
+               <div>
+                 <select  name="from" id="">
+                     <option value="USD">USD</option>
+                     <option value="INR">INR</option>
+                     <option value="EURO">EURO</option>
+                     <option value="AUD">AUD</option>
+                 </select>
+               </div>
+                     </div>
+                </div>
+            </div>
+          <div>
+            <i class="fa-solid fa-arrow-right-arrow-left"></i>
+          </div>
+          <div class="from">
+            <p>to</p>
+            <div class="slect">
+        
+                <img src="https://flagsapi.com/IN/flat/64.png" alt="">
+             
+      <div>
         <select name="from" id="">
             <option value="USD">USD</option>
             <option value="INR" selected>INR</option>
             <option value="EURO">EURO</option>
             <option value="AUD">AUD</option>
         </select>
-    </div>
-    <div class="msg">
-        1 USD = 80 NIR
-    </div>
-    <button>get Exchange rate</button>
+      </div>
+            </div>
+        </div>
+            
+        </div>
+        <div class="msg">
+            1 USD = 80 NIR
+        </div>
+        <button>get Exchange rate</button>
 </div>
 
 </form>
