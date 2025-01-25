@@ -1,5 +1,6 @@
+const countryLis ={
 
-const countryList ={
+    
     AED: "AE",
     AFN: "AF",
     XCD: "AG",
@@ -160,84 +161,3 @@ const countryList ={
     ZMK: "ZM",
     ZWD: "ZW",
   };
-  console.log(countryList["ZWD"])
-  const Base_URl = "https://cdn.jsdelivr.net/gh/fawazahmed0/currency-api@1/latest/currencies"
-
-const dropdown = document.querySelectorAll(".dropdawn select ")
-
-
-
-
-const btn = document.querySelector("button")
-
-const formCurr = document.querySelector(".slect select")
-
-const toCurr = document.querySelector(".select2 select")
-const msg = document.querySelector(".msg")
-for(let select of dropdown){
-  for(let curCode  in countryList){
-    const newOption = document.createElement("option")
-    newOption.innerHTML = curCode;
-    newOption.value =curCode;
-   
-    if(select.name ==="from" && curCode === "USD"){
-      newOption.selected = "selected"
-    } else if (select.name  === "to" && curCode ==="IND" ){
-        newOption.selected = "selected"
-    }
-    select.append(newOption)
-  }
-select.addEventListener("change",(advt)=>{
-  updateFlag(advt.target)
-  f(advt.target)
-})
-
-
-}
-
-const updateFlag = (e)=>{
-
-  console.log(e)
-let code = e.value
-console.log(code)
-let countryFlag = countryList[code]
-
-
-let updateFlag = `https://flagsapi.com/${countryFlag}/flat/64.png`
-
-let img =  e.parentElement.querySelector("img")
-img.src = updateFlag
-}
-
-
-
-btn.addEventListener("click",async (e)=>{
-  e.preventDefault();
-  const input = document.querySelector ("form input")
-
-  const amtval= input.value;
-
-console.log(amtval)
-
-
-  if(amtval === "" ||amtval > 1){
- 
-   console.log(amtval)
-   input.value = "1"
-   console.log(formCurr.value)
-   console.log(toCurr.value)
-  
-  }
-
-  const url = `${Base_URl}/${formCurr.value.toLowerCase()}/${toCurr.value.toLowerCase()}`
-
-  let response = await fetch(url)
-  let data = await response.json()
-
-  const rate = data[toCurr.value.toLowerCase()]
-
-  const finalAmount = amtval*rate
-
-  msg.innerText = `${amtval} ${formCurr} = ${finalAmount} ${toCurr}`
-  console.log(response)
-})
